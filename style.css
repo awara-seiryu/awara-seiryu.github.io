@@ -1074,12 +1074,12 @@ img {
 .access-bar {
   background: #fff;
   border-radius: 18px;
-  padding: 20px 28px;
+  padding: 25px 35px;
   margin: 0 15px 22px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
   transition: transform 0.3s;
 }
 
@@ -1088,7 +1088,7 @@ img {
 }
 
 .access-bar img {
-  height: 65px;
+  height: 80px;
   width: auto;
   animation: wiggle 3s ease-in-out infinite;
 }
@@ -1098,14 +1098,14 @@ img {
 }
 
 .access-bar-text h3 {
-  font-size: 17px;
+  font-size: 22px;
   color: #e85d26;
   margin-bottom: 5px;
   font-weight: 900;
 }
 
 .access-bar-text p {
-  font-size: 13px;
+  font-size: 17px;
   color: #666;
   line-height: 1.7;
 }
