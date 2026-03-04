@@ -92,6 +92,7 @@ body {
   background: #FFF9F0;
   color: #333;
   line-height: 1.8;
+  font-size: 17px;
 }
 
 a {
@@ -154,7 +155,7 @@ img {
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 46px;
   color: #fff;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
   margin-bottom: 8px;
@@ -163,7 +164,7 @@ img {
 }
 
 .hero-sub {
-  font-size: 22px;
+  font-size: 26px;
   color: #fff;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
@@ -171,7 +172,7 @@ img {
 }
 
 .hero-catch {
-  font-size: 16px;
+  font-size: 18px;
   color: #FFFFF0;
   margin-bottom: 12px;
   font-weight: 500;
@@ -210,7 +211,7 @@ img {
 }
 
 .hero-award-label {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #FFD700;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
@@ -219,7 +220,7 @@ img {
 }
 
 .hero-award-main {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 900;
   color: #fff;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
@@ -232,7 +233,7 @@ img {
 }
 
 .hero-award-sub {
-  font-size: 13px;
+  font-size: 15px;
   color: #ffe;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   margin-top: 4px;
@@ -252,7 +253,7 @@ img {
   display: inline-block;
   background: linear-gradient(135deg, #FF6B6B, #ee5a24);
   color: #fff;
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 900;
   padding: 18px 55px;
   border-radius: 50px;
@@ -282,7 +283,7 @@ img {
 
 .cta-btn-sub {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   margin-top: 3px;
   letter-spacing: 0;
@@ -322,7 +323,7 @@ img {
 
 .section-title {
   display: inline-block;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 900;
   color: #e85d26;
   position: relative;
@@ -348,7 +349,7 @@ img {
 
 .section-subtitle {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: #cc7744;
   margin-top: 5px;
   letter-spacing: 4px;
@@ -439,14 +440,14 @@ img {
 }
 
 .charm-card h3 {
-  font-size: 19px;
+  font-size: 22px;
   color: #e85d26;
   line-height: 1.5;
   font-weight: 900;
 }
 
 .charm-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   line-height: 1.9;
 }
@@ -574,7 +575,7 @@ img {
 }
 
 .point-bubble h3 {
-  font-size: 18px;
+  font-size: 21px;
   color: #e85d26;
   margin-bottom: 8px;
   display: flex;
@@ -599,7 +600,7 @@ img {
 }
 
 .point-bubble p {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   line-height: 1.85;
 }
@@ -668,7 +669,7 @@ img {
 }
 
 .plan-card h3 {
-  font-size: 17px;
+  font-size: 20px;
   color: #333;
   margin-bottom: 10px;
   margin-top: 14px;
@@ -677,7 +678,7 @@ img {
 }
 
 .plan-card .price {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 900;
   color: #ee5a24;
 }
@@ -689,7 +690,7 @@ img {
 }
 
 .plan-card .plan-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #666;
   margin: 10px 0 14px;
   line-height: 1.65;
