@@ -115,7 +115,10 @@ img {
 
 /* ===== ファーストビュー ===== */
 .hero {
-  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 50%, #43e97b 100%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://awara-seiryu.github.io/image/玄関文字.JPG');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   border-radius: 0;
   padding: 60px 40px 0;
   text-align: left;
