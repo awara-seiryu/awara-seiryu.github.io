@@ -667,7 +667,6 @@ img {
   text-align: center;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
   position: relative;
-  overflow: hidden;
 }
 
 .plan-card:hover {
@@ -721,11 +720,12 @@ img {
 
 .plan-card-chara {
   position: absolute;
-  bottom: -5px;
-  right: -5px;
-  height: 55px;
+  bottom: 5px;
+  right: 5px;
+  height: 75px;
+  /* 一回り大きく（55px -> 75px） */
   width: auto;
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity 0.3s, transform 0.3s;
 }
 
@@ -1199,6 +1199,21 @@ img {
   padding: 20px 22px;
   margin: 18px 0;
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: visible;
+}
+
+.guide-chara-big {
+  height: 120px !important;
+  /* 強制的に大きくする */
+  max-width: none !important;
+  width: auto !important;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.15));
+  animation: float 3s ease-in-out infinite;
+  z-index: 10;
 }
 
 .guide-block:hover {
