@@ -115,8 +115,8 @@ img {
 /* ===== ファーストビュー ===== */
 .hero {
   background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 50%, #43e97b 100%);
-  border-radius: 0 0 30px 30px;
-  padding: 40px 30px 28px;
+  border-radius: 0;
+  padding: 40px 30px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -173,46 +173,78 @@ img {
 .hero-catch {
   font-size: 16px;
   color: #FFFFF0;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   font-weight: 500;
   line-height: 1.9;
 }
 
-.hero-characters {
+/* ===== ヒーロー内アワード表示 ===== */
+.hero-award {
+  margin-top: 10px;
+  padding: 20px 20px 18px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  animation: popIn 0.8s ease-out both;
+}
+
+.hero-award-content {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-end;
-  gap: 14px;
-  margin-bottom: 22px;
+  gap: 18px;
 }
 
-.hero-characters img {
-  height: 95px;
+.hero-award-chara {
+  height: 110px;
   width: auto;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.18));
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
   animation: float 3s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
-.hero-characters img:nth-child(2) {
-  animation-delay: 0.3s;
+.hero-award-text {
+  text-align: center;
+  flex-shrink: 0;
 }
 
-.hero-characters img:nth-child(3) {
-  animation-delay: 0.6s;
+.hero-award-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFD700;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 4px;
+  letter-spacing: 1px;
 }
 
-.hero-characters img:nth-child(4) {
-  animation-delay: 0.9s;
+.hero-award-main {
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.hero-characters img:nth-child(5) {
-  animation-delay: 1.2s;
+.hero-award-sub {
+  font-size: 13px;
+  color: #ffe;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  margin-top: 4px;
+  font-weight: 500;
 }
 
-.hero-characters img:hover {
-  transform: scale(1.2) rotate(-5deg) !important;
-  animation-play-state: paused;
+.hero-award-badge {
+  max-width: 340px;
+  height: auto;
+  filter: drop-shadow(2px 4px 10px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
+  border-radius: 10px;
 }
 
 /* ===== CTAボタン ===== */
@@ -321,36 +353,6 @@ img {
   margin-top: 5px;
   letter-spacing: 4px;
   font-weight: 700;
-}
-
-/* ===== アワード帯 ===== */
-.award-banner {
-  background: linear-gradient(90deg, #FFD700, #FFA500);
-  padding: 16px 30px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-}
-
-.award-banner img {
-  height: 65px;
-  width: auto;
-}
-
-.award-text {
-  color: #7B3F00;
-  font-weight: bold;
-}
-
-.award-text .big {
-  font-size: 22px;
-  display: block;
-}
-
-.award-text .small {
-  font-size: 13px;
 }
 
 /* ===== 魅力紹介カード ===== */
