@@ -1,0 +1,15 @@
+# MS Office temporary files
+~$*
+
+# Windows thumbnail cache
+Thumbs.db
+
+# OneDrive temporary files
+.replit
+.DS_Store
+
+# Text editor / IDE settings
+.vscode/
+.idea/
+*.swp
+*.bak
