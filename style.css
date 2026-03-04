@@ -187,7 +187,7 @@ img {
 /* ===== ヒーロー内アワード表示 ===== */
 .hero-award {
   margin-top: 25px;
-  background: url('image/award-2024-all.png') no-repeat center center;
+  background: url('https://awara-seiryu.github.io/image/award-2024-all.png') no-repeat center center;
   background-size: cover;
   border-radius: 25px;
   border: 2px solid rgba(255, 215, 0, 0.4);
