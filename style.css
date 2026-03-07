@@ -478,6 +478,39 @@ img {
   line-height: 1.9;
 }
 
+/* ===== 写真活用スタイル ===== */
+.photo-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.photo-img:hover {
+  transform: scale(1.02);
+}
+
+.charm-card>.photo-img {
+  margin-bottom: 16px;
+}
+
+.point-bubble .photo-img {
+  margin-top: 14px;
+}
+
+.plan-card>.photo-img {
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+.photo-img.photo-contain {
+  object-fit: contain;
+  box-shadow: none;
+}
+
 /* ===== 吹き出しポイント ===== */
 .point-section {
   background: linear-gradient(180deg, #FFF3E0, #FFF9F0);
