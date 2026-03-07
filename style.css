@@ -1236,3 +1236,43 @@ img {
   color: #555;
   line-height: 1.8;
 }
+
+/* ===== アクセスページ固有スタイル ===== */
+.access-map {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.access-map iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.access-info-box {
+  display: flex;
+  align-items: center;
+  background: #f9fdf9;
+  border: 2px solid #e0f2e9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.access-info-text h3 {
+  color: #2e8b57;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.access-info-text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.access-chara {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
