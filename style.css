@@ -222,10 +222,8 @@ img {
 
 .hero-award-chara {
   height: 180px;
-  /* 右側の画像と同じサイズに拡大 */
   width: auto;
   filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.25));
-  animation: float 3s ease-in-out infinite;
   flex-shrink: 0;
 }
 
@@ -254,7 +252,6 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: pulse 2s ease-in-out infinite;
   white-space: nowrap;
 }
 
@@ -349,28 +346,28 @@ img {
 
 .section-title {
   display: inline-block;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 900;
   color: #e85d26;
   position: relative;
-  padding: 0 25px;
+  padding: 0 25px 8px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.section-title-wrap::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
 }
 
 .section-title::before,
 .section-title::after {
-  content: '🎵';
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.section-title::before {
-  left: -8px;
-}
-
-.section-title::after {
-  right: -8px;
+  content: none;
 }
 
 .section-subtitle {
@@ -457,7 +454,6 @@ img {
 .charm-card-header img {
   height: 65px;
   width: auto;
-  animation: wiggle 2.5s ease-in-out infinite;
 }
 
 .charm-card-header img:hover {
@@ -466,16 +462,37 @@ img {
 }
 
 .charm-card h3 {
-  font-size: 22px;
+  font-size: 23px;
   color: #e85d26;
   line-height: 1.5;
   font-weight: 900;
+  letter-spacing: 0.4px;
 }
 
 .charm-card p {
   font-size: 16px;
   color: #555;
   line-height: 1.9;
+}
+
+.charm-card-cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffeddc, #fff6ee);
+  color: #e85d26;
+  font-size: 14px;
+  font-weight: 900;
+  border: 1px solid #ffd1b8;
+  box-shadow: 0 3px 10px rgba(232, 93, 38, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.charm-card-cta:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffe2ca, #fff1e6);
+  box-shadow: 0 6px 16px rgba(232, 93, 38, 0.18);
 }
 
 /* ===== 写真活用スタイル ===== */
@@ -493,8 +510,87 @@ img {
   transform: scale(1.02);
 }
 
-.charm-card>.photo-img {
+.charm-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
+  background: #f6efe6;
+}
+
+.charm-slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s ease;
+}
+
+.charm-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.charm-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #e85d26;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  z-index: 2;
+  opacity: 0.92;
+}
+
+.charm-slider-btn:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.charm-slider-prev {
+  left: 10px;
+}
+
+.charm-slider-next {
+  right: 10px;
+}
+
+.charm-slider-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.charm-slider-dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.charm-slider-dot.is-active {
+  background: #fff;
+  transform: scale(1.2);
 }
 
 .point-bubble .photo-img {
@@ -574,24 +670,7 @@ img {
 .point-item-chara img {
   height: 85px;
   width: auto;
-  animation: float 3s ease-in-out infinite;
   transition: transform 0.3s;
-}
-
-.point-item:nth-child(2) .point-item-chara img {
-  animation-delay: 0.5s;
-}
-
-.point-item:nth-child(3) .point-item-chara img {
-  animation-delay: 1.0s;
-}
-
-.point-item:nth-child(4) .point-item-chara img {
-  animation-delay: 1.5s;
-}
-
-.point-item:nth-child(5) .point-item-chara img {
-  animation-delay: 2.0s;
 }
 
 .point-item-chara img:hover {
@@ -634,13 +713,14 @@ img {
 }
 
 .point-bubble h3 {
-  font-size: 21px;
+  font-size: 22px;
   color: #e85d26;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 10px;
   font-weight: 900;
+  letter-spacing: 0.3px;
 }
 
 .point-bubble h3 .num {
@@ -717,17 +797,17 @@ img {
   transform: translateX(-50%);
   background: linear-gradient(135deg, #FF6B6B, #ee5a24);
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
-  padding: 5px 20px;
+  padding: 6px 20px;
   border-radius: 0 0 14px 14px;
   white-space: nowrap;
   box-shadow: 0 3px 10px rgba(238, 90, 36, 0.3);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 }
 
 .plan-card h3 {
-  font-size: 20px;
+  font-size: 21px;
   color: #333;
   margin-bottom: 10px;
   margin-top: 14px;
@@ -752,6 +832,23 @@ img {
   color: #666;
   margin: 10px 0 14px;
   line-height: 1.65;
+}
+
+.plan-target {
+  display: inline-block;
+  background: #fff3e6;
+  color: #e85d26;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin: 2px 0 10px;
+}
+
+.plan-card .price-note {
+  font-size: 12px;
+  color: #888;
+  margin: 4px 0 12px;
 }
 
 .plan-card-chara {
@@ -837,10 +934,11 @@ img {
 }
 
 .room-banner-text h3 {
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 10px;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
   font-weight: 900;
+  letter-spacing: 0.5px;
 }
 
 .room-banner-text p {
@@ -854,7 +952,6 @@ img {
   height: 120px;
   width: auto;
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.18));
-  animation: float 3s ease-in-out infinite;
   flex-shrink: 0;
 }
 
@@ -934,16 +1031,16 @@ img {
   position: relative;
   z-index: 2;
   filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.25));
-  animation: wiggle 3s ease-in-out infinite;
   display: block;
 }
 
 .facility-card h3 {
-  font-size: 17px;
+  font-size: 19px;
   color: #e85d26;
   margin-bottom: 8px;
   font-weight: 900;
   padding: 0 15px;
+  letter-spacing: 0.3px;
 }
 
 .facility-card p {
@@ -956,19 +1053,6 @@ img {
 .facility-card img:hover {
   animation: none;
   transform: scale(1.15);
-}
-
-.facility-card h3 {
-  font-size: 17px;
-  color: #e85d26;
-  margin-bottom: 8px;
-  font-weight: 900;
-}
-
-.facility-card p {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.7;
 }
 
 /* ===== 最終CTA ===== */
@@ -1014,11 +1098,12 @@ img {
 }
 
 .final-cta h2 {
-  font-size: 36px;
+  font-size: 40px;
   color: #fff;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
   margin-bottom: 12px;
   font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .final-cta .sub-text {
@@ -1040,32 +1125,7 @@ img {
   height: 75px;
   width: auto;
   filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.18));
-  animation: float 2.5s ease-in-out infinite;
   transition: transform 0.3s;
-}
-
-.final-cta-characters img:nth-child(2) {
-  animation-delay: 0.35s;
-}
-
-.final-cta-characters img:nth-child(3) {
-  animation-delay: 0.7s;
-}
-
-.final-cta-characters img:nth-child(4) {
-  animation-delay: 1.05s;
-}
-
-.final-cta-characters img:nth-child(5) {
-  animation-delay: 1.4s;
-}
-
-.final-cta-characters img:nth-child(6) {
-  animation-delay: 1.75s;
-}
-
-.final-cta-characters img:nth-child(7) {
-  animation-delay: 2.1s;
 }
 
 .final-cta-characters img:hover {
@@ -1126,7 +1186,6 @@ img {
 .access-bar img {
   height: 80px;
   width: auto;
-  animation: wiggle 3s ease-in-out infinite;
 }
 
 .access-bar-text {
@@ -1134,16 +1193,34 @@ img {
 }
 
 .access-bar-text h3 {
-  font-size: 22px;
+  font-size: 24px;
   color: #e85d26;
   margin-bottom: 5px;
   font-weight: 900;
+  letter-spacing: 0.4px;
 }
 
 .access-bar-text p {
   font-size: 17px;
   color: #666;
   line-height: 1.7;
+}
+
+.access-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.access-list li {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.access-list a {
+  color: #e85d26;
+  font-weight: 900;
 }
 
 /* ===== 区切りデコ ===== */
@@ -1156,7 +1233,6 @@ img {
   height: 50px;
   width: auto;
   opacity: 0.7;
-  animation: float 3s ease-in-out infinite;
   transition: transform 0.3s;
 }
 
@@ -1241,14 +1317,12 @@ img {
 
 .guide-chara-big {
   height: 120px !important;
-  /* 強制的に大きくする */
   max-width: none !important;
   width: auto !important;
   position: absolute;
   right: 15px;
   bottom: 0;
   filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.15));
-  animation: float 3s ease-in-out infinite;
   z-index: 10;
 }
 
@@ -1261,7 +1335,6 @@ img {
   height: 75px;
   width: auto;
   flex-shrink: 0;
-  animation: wiggle 3s ease-in-out infinite;
 }
 
 .guide-block p {
