@@ -1583,3 +1583,134 @@ img {
   color: #666;
   margin-bottom: 18px;
 }
+
+/* ===== 客室ページ固有スタイル ===== */
+.room-intro {
+  background: linear-gradient(135deg, #fffef6, #ffefe0);
+  border-radius: 24px;
+  padding: 28px 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  margin-bottom: 30px;
+  text-align: center;
+}
+.room-intro p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.room-card {
+  display: flex;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .room-card {
+    flex-direction: column;
+  }
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(255, 126, 95, 0.16);
+}
+
+.room-card-img {
+  width: 42%;
+  flex-shrink: 0;
+  position: relative;
+  background: #f9f9f9;
+}
+
+.room-card-img .charm-slider {
+  height: 100%;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.room-card-img .charm-slider-track {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .room-card-img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.room-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.room-card-body {
+  padding: 24px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.room-card-body h3 {
+  font-size: 22px;
+  color: #e85d26;
+  margin-bottom: 12px;
+  font-weight: 900;
+  line-height: 1.4;
+  border-bottom: 2px solid #ffefe0;
+  padding-bottom: 10px;
+}
+
+.room-card-desc {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.room-specs {
+  background: #fdfaf6;
+  border: 1px dashed #ffb07a;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.room-spec-item {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.room-spec-item:last-child {
+  margin-bottom: 0;
+}
+.room-spec-label {
+  font-weight: 900;
+  color: #e85d26;
+  width: 110px;
+  flex-shrink: 0;
+}
+.room-spec-value {
+  color: #555;
+  flex: 1;
+  font-weight: 500;
+}
+
+.room-card-action {
+  text-align: right;
+  margin-top: auto;
+}
+
