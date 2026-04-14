@@ -1,14 +1,34 @@
-const sliderRoots = document.querySelectorAll("[data-slider]");
+const sliderRoots = document.querySelectorAll(".charm-slider");
 
 sliderRoots.forEach((root, sliderIndex) => {
   const track = root.querySelector(".charm-slider-track");
-  const slides = Array.from(root.querySelectorAll(".charm-slide"));
-  const prevButton = root.querySelector(".charm-slider-prev");
-  const nextButton = root.querySelector(".charm-slider-next");
-  const dotsWrap = root.querySelector(".charm-slider-dots");
+  const slides = track ? Array.from(track.children) : [];
+  let prevButton = root.querySelector(".charm-slider-prev");
+  let nextButton = root.querySelector(".charm-slider-next");
+  let dotsWrap = root.querySelector(".charm-slider-dots");
 
-  if (!track || slides.length === 0 || !prevButton || !nextButton || !dotsWrap) {
+  if (!track || slides.length === 0) {
     return;
+  }
+
+  if (!prevButton) {
+    prevButton = document.createElement("button");
+    prevButton.className = "charm-slider-btn charm-slider-prev";
+    prevButton.textContent = "‹";
+    root.appendChild(prevButton);
+  }
+
+  if (!nextButton) {
+    nextButton = document.createElement("button");
+    nextButton.className = "charm-slider-btn charm-slider-next";
+    nextButton.textContent = "›";
+    root.appendChild(nextButton);
+  }
+
+  if (!dotsWrap) {
+    dotsWrap = document.createElement("div");
+    dotsWrap.className = "charm-slider-dots";
+    root.appendChild(dotsWrap);
   }
 
   let currentIndex = 0;
@@ -16,9 +36,7 @@ sliderRoots.forEach((root, sliderIndex) => {
 
   const dots = slides.map((_, index) => {
     const dot = document.createElement("button");
-    dot.type = "button";
     dot.className = "charm-slider-dot";
-    dot.setAttribute("aria-label", `${index + 1}枚目の画像へ移動`);
     dot.addEventListener("click", () => {
       goTo(index);
       restartAutoPlay();
